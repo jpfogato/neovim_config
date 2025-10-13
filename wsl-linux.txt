@@ -1,0 +1,104 @@
+Powershell
+to list the available linux distros
+	wsl --list
+	
+to launch Ubuntu
+	wsl -d Ubuntu-24.04
+
+to kill the running distro
+	wsl --shutdown # on another powershell instance
+	
+sudo pw:
+	admin
+
+------------------------------------------- PACKAGE MANAGER
+
+Ubuntu uses "apt" for package management
+	
+	sudo apt install <package>	# to install something
+	sudo apt update	# to update packages
+	sudo apt search <keyword>	# searches for package to install
+	sudo apt remove <package>	# removes a package
+	apt search <package>	# searches for package
+	dpkg -L <package>	# lists all the locations where this package is found
+	sudo apt update # Fetches the latestes packets
+	sudo apt upgrade -y # installs the latest packages
+
+
+------------------------------------------- LINUX
+
+directory/file operations
+
+	pwd	# show current working dir
+	ls	# list current directory content
+	ls -l	# detailed list
+	cd <path>	# chage directory
+	cd ..	# goes up one level
+	mkdir <path>	# creates a directory
+	mkdir -p <path>	# creates all directories and subdirectories
+	cp <origin> <destination>	# copies origin to destination
+	mv <origin> <destination>	# moves origin to destination or rename a file
+	rm <path>	# removes a file or dir
+	rm -r <path>	# deletes recursively
+
+important locations
+
+	home directory:
+		/home/<username>
+		~
+	
+	
+
+text editing
+	nano <file.ext>	# opens or creates a text file
+		save: ctrl+O
+		exit: ctrl+x
+		
+
+--------------- APPS
+
+- shell: change to zsh
+
+	zsh shell
+		sudo aptinstall zsh
+		
+		update the allowed shell apps
+			1. check the path for zsh
+				which zsh
+				
+			2. open the etc/shells
+				sudo nano /etc/shells
+				
+			3. update the file with the path from "which zsh"
+			
+			4. save the file
+				ctrl+O -> enter -> ctrl+x
+				
+			5. set zsh as default
+				chsh -s $(which zsh)
+			
+	git / github
+		sudo aptinstall git
+		git config --global user.name "jpfogato"
+		git config --global user.email "jpfogato@gmail.com"
+
+
+	tree
+		sudo aptinstall tree
+		tree -a		# lists a tree of files and directories from the current folder
+
+
+
+
+
+
+
+
+
+
+
+
+---------- wsl using GUI
+	1. install VcXsrv on windows. This will allow your wsl to launch the GUI using the VcX ui
+		https://vcxsrv.com/
+	2. 
