@@ -11,6 +11,9 @@ to kill the running distro
 sudo pw:
 	admin
 
+restart the shell during an ssh session:
+	exec bash
+
 ------------------------------------------- PACKAGE MANAGER
 
 Ubuntu uses "apt" for package management
@@ -104,3 +107,4 @@ text editing
 		https://vcxsrv.com/
 
 	2. 
+
