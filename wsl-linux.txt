@@ -40,6 +40,7 @@ directory/file operations
 	mv <origin> <destination>	# moves origin to destination or rename a file
 	rm <path>	# removes a file or dir
 	rm -r <path>	# deletes recursively
+	scp <file> <username@hostname>:<location> # copies something from the Windows PC to the SSH server 
 
 important locations
 
@@ -101,4 +102,5 @@ text editing
 ---------- wsl using GUI
 	1. install VcXsrv on windows. This will allow your wsl to launch the GUI using the VcX ui
 		https://vcxsrv.com/
+
 	2. 
