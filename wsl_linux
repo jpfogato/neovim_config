@@ -43,7 +43,11 @@ directory/file operations
 	mv <origin> <destination>	# moves origin to destination or rename a file
 	rm <path>	# removes a file or dir
 	rm -r <path>	# deletes recursively
-	scp <file> <username@hostname>:<location> # copies something from the Windows PC to the SSH server 
+	scp <file> <username@hostname>:<location> # copies something from the Windows PC to the SSH server
+
+
+Windows path on WSL:
+	/mnt/c/
 
 important locations
 
@@ -51,6 +55,7 @@ important locations
 		/home/<username>
 		~
 	
+	/usr/share/fonts # fonts for all users run `fc-cache -fv` after installing new fonts
 	
 
 text editing
@@ -64,7 +69,7 @@ text editing
 - shell: change to zsh
 
 	zsh shell
-		sudo aptinstall zsh
+		sudo apt install zsh
 		
 		update the allowed shell apps
 			1. check the path for zsh
@@ -82,15 +87,19 @@ text editing
 				chsh -s $(which zsh)
 			
 	git / github
-		sudo aptinstall git
+		sudo apt install git
 		git config --global user.name "jpfogato"
 		git config --global user.email "jpfogato@gmail.com"
 
 
 	tree
-		sudo aptinstall tree
+		sudo apt install tree
 		tree -a		# lists a tree of files and directories from the current folder
 
+	unzip
+		sudo apt install unzip
+		(sudo) unzip FILE -d DESTINATION # unzips a file into the destination
+		unzip FILE -l # lists the file contents
 
 
 
@@ -99,12 +108,9 @@ text editing
 
 
 
+WSL-SPECIFIC STUFF 
 
-
-
----------- wsl using GUI
-	1. install VcXsrv on windows. This will allow your wsl to launch the GUI using the VcX ui
-		https://vcxsrv.com/
-
-	2. 
-
+	Fonts for nvim
+		Download the nerd font (Caskadya or JetBrains!)
+		Install it using Windows font manager
+		Update the terminal settings for Ubuntu to use this font
