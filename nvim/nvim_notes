@@ -18,8 +18,12 @@ $ > end of line
 A > appends to the end of the line
 a > appends to the selected char
 D, dd > deletes until the end of the line
-dw > deletes word
-d2w > type a number in the command to repeat # of times
+d > delete
+    +w > word
+    +i > ..inside..
+        +b > braces
+        +" > quotes
+        +] | +} > brackets
 ~ > toggle letter case
 x > deletes selected char
 y > copy
@@ -36,13 +40,9 @@ r > replaces the current char with a new one
 :q! > quit without saving
 :w > writes to a file
 :wq > writes to the file and quits
-d2w > type a number in the command to repeat # of times
+[command][repeat][argument] > type a number in the command to repeat # of times
 
 // Other notes:
 
-Tree-Sitter
-    requires the cli for building the syntax highlighting
-    install it by running
-    sudo apt install tree-sitter-cli
 
 
