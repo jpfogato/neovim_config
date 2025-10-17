@@ -30,7 +30,8 @@ y > copy
 Y > copy line
 p > paste
 P > paste before
-O > inserts in a new line below the current one
+O > inserts a new line above the current one
+o > inserts a new line below the current one
 r > replaces the current char with a new one
 
 : > console
