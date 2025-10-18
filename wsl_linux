@@ -11,9 +11,15 @@ to kill the running distro
 sudo pw:
 	admin
 
+Unix Shell
+
 restart the shell during an ssh session:
 	exec bash
 
+get the result of a previous command as a parameter of a new command:
+    <package1> "$(<package2>)"
+    example:
+        nvim "$(fzf)"
 ------------------------------------------- PACKAGE MANAGER
 
 Ubuntu uses "apt" for package management
@@ -92,7 +98,7 @@ text editing
 		git config --global user.email "jpfogato@gmail.com"
 
 
-	tree
+	tree // terminal: prints the tree for the selected dir
 		sudo apt install tree
 		tree -a		# lists a tree of files and directories from the current folder
 
@@ -101,7 +107,13 @@ text editing
 		(sudo) unzip FILE -d DESTINATION # unzips a file into the destination
 		unzip FILE -l # lists the file contents
 
+    fzf // terminal: file indexer with fuzzy finding
+        sudo apt isntall fzf
+        fzf
 
+    ripgrep // terminal: searches for text in the files of cwd
+        sudo apt install ripgrep
+        rg '<search_expression>'
 
 
 
