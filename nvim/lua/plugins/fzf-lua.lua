@@ -8,33 +8,76 @@ return {
 	keys = {
 		{ "<Leader>ff",
 			function() require ('fzf-lua').files() end,
-			desc="Find files in cwd"
+			desc="[F]ind [F]iles in cwd"
 		},
 
-		{ "<Leader>fg",
+		{ "<Leader>fr",
 			function() require ('fzf-lua').live_grep() end,
-			desc="Find by grep expression in cwd"
+			desc="[F]ind g[R]ep expression in cwd"
 		},
 
-		{ "<Leader>fn",
+		{ "<Leader>fnc",
 			function() require ('fzf-lua').files({cwd = vim.fn.stdpath("config")}) end,
-			desc="Find in neovim configuration"
+			desc="[F]ind on [N]eovim [C]onfiguration"
 		},
 		
-		{ "<Leader>gs",
+		{ "<Leader>fgs",
 			function() require ('fzf-lua').git_status() end,
-			desc="Git status"
-		},
-		
-		{ "<Leader>gs",
-			function() require ('fzf-lua').git_status() end,
-			desc="Git status"
+			desc="[F]ind on [G]it [S]tatus"
 		},
 
-		{ "<Leader>gb",
+		{ "<Leader>fgb",
 			function() require ('fzf-lua').git_branches() end,
-			desc="Git branches"
+			desc="[F]ind on [G]it [B]ranches"
 		},
+
+		{ "<Leader>fnb",
+			function() require ('fzf-lua').builtin() end,
+			desc="[F]ind in [N]eovim [B]uiltins"
+		},
+
+
+		{ "<Leader>fnh",
+			function() require ('fzf-lua').builtin() end,
+			desc="[F]ind in [N]eovim [H]elp"
+		},
+
+		{ "<Leader>fk",
+			function() require ('fzf-lua').keymaps() end,
+			desc="[F]ind in [K]eymaps"
+		},
+
+		{ "<Leader>fw",
+			function() require ('fzf-lua').grep_cword() end,
+			desc="[F]ind current [w]ord"
+		},
+
+
+		{ "<Leader>fW",
+			function() require ('fzf-lua').grep_cWORD() end,
+			desc="[F]ind current [W]ORD"
+		},
+
+		{ "<Leader>fR",
+			function() require ('fzf-lua').resume() end,
+			desc="[F]ind [R]esume search session"
+		},
+
+		{ "<Leader>fo",
+			function() require ('fzf-lua').oldfiles() end,
+			desc="[F]ind [O]ld files"
+		},
+
+		{ "<Leader><Leader>",
+			function() require ('fzf-lua').buffers() end,
+			desc="Switch between files"
+		},
+
+		{ "<Leader>/",
+			function() require ('fzf-lua').lgrep_curbuf() end,
+			desc="[/] Live grep the current buffer"
+		},
+
 
 
 	}
