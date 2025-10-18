@@ -1,7 +1,29 @@
-# .config repository
+# Neovim settings repository
 
-Home configuration for WSL or any Unix-based with my default apps and settings
+This repository holds my Neovim plugins' and their settings. It also provides a shell script to install all dependencies to it automatically.
 
-Clone it or download as a .zip and extract at ~
+Contained plugins:
 
-Read the documentation of your package manager to ensure it will be loaded when one of the configured apps is launched
+- sleuth
+- wich-key
+- treesitter
+- oil
+- kanagawa
+- treesitter-textobjects
+- statusline
+- projects
+- fzf-lua
+
+
+## Installation 
+Clone it or download as a .zip and extract at ~ by `unzip .\neovim_config.zip ~`
+
+--- Under development:
+Then open the terminal and execute
+
+```bash
+cd ~
+chmod +x nvim_config_install.sh
+
+./nvim_config_install.sh
+```
