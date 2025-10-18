@@ -1,6 +1,6 @@
 # Neovim settings repository
 
-This repository holds my Neovim plugins' and their settings. It also provides a shell script to install all dependencies to it automatically.
+This repository holds my Neovim plugins and their settings. It also provides a shell script to install all dependencies to it automatically.
 
 Contained plugins:
 
@@ -19,6 +19,7 @@ Contained plugins:
 Clone it or download as a .zip and extract at ~ by `unzip .\neovim_config.zip ~`
 
 --- Under development:
+
 Then open the terminal and execute
 
 ```bash
