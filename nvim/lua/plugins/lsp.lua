@@ -62,14 +62,14 @@ return {
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        map('<Leader>lr', vim.lsp.buf.rename, '[r]ename')
+        map('<Leader>ln', vim.lsp.buf.rename, 're[n]ame')
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
         map('<Leader>la', vim.lsp.buf.code_action, 'code [a]ctions', { 'n', 'x' })
 
         -- Find references for the word under your cursor.
-        map('<Leader>lf', require('fzf-lua').lsp_references, 're[f]erences')
+        map('<Leader>lr', require('fzf-lua').lsp_references, '[r]eferences')
 
         -- Jump to the implementation of the word under your cursor.
         --  Useful when your language has ways of declaring types without an actual implementation.
@@ -90,7 +90,7 @@ return {
 
         -- Fuzzy find all the symbols in your current workspace.
         --  Similar to document symbols, except searches over your entire project.
-        map('<Leader>lW', require('fzf-lua').lsp_live_workspace_symbols, '[O]pen workspace symbols')
+        map('<Leader>lW', require('fzf-lua').lsp_live_workspace_symbols, 'open [W]orkspace symbols')
 
         -- Jump to the type of the word under your cursor.
         --  Useful when you're not sure what type a variable is and you want to see
@@ -195,6 +195,8 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
+      bashls = {},
+      marksman = {},
       -- clangd = {},
       -- gopls = {},
       -- pyright = {},

@@ -50,5 +50,11 @@ V > line-wise visual mode
 
 // Other notes:
 
-
+install support to LSP:
+open :Mason
+search for the language neding support by <C-f>
+note the SHORT name down
+in the lsp.lua file under "local servers = {..."
+add the language support
+reload neovim
 
