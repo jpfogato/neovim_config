@@ -22,6 +22,7 @@ Clone it or download as a .zip and extract at ~ by `unzip .\neovim_config.zip ~`
 
 Then open the terminal and execute
 
+
 ```bash
 cd ~
 chmod +x nvim_config_install.sh
