@@ -1,6 +1,7 @@
 # Neovim settings repository
 
-This repository holds my Neovim plugins and their settings. It also provides a shell script to install all dependencies to it automatically.
+This repository holds my Neovim plugins and their settings. 
+The goal for the future is also to provide a shell script to install all dependencies so the repo can spin up automatically after clonning and running the installation script.
 
 Contained plugins:
 
@@ -13,19 +14,16 @@ Contained plugins:
 - statusline
 - projects
 - fzf-lua
+- lsp (yanked from kickstart.nvim)
+- dressing
+- rustacean
+
+Dependecies:
+
+- rust
+- rust-analyzer
+- lua
 
 
 ## Installation 
 Clone it or download as a .zip and extract at ~ by `unzip .\neovim_config.zip ~`
-
---- Under development:
-
-Then open the terminal and execute
-
-
-```bash
-cd ~
-chmod +x nvim_config_install.sh
-
-./nvim_config_install.sh
-```
