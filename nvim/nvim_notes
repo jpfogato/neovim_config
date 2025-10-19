@@ -1,5 +1,14 @@
 // commands in normal mode
 esc > command mode
+: > console
+:help > documentation
+:Tutor > tutorial
+:q > quit to main
+:q! > quit without saving
+:w > writes to a file
+:wq > writes to the file and quits
+[command][repeat][argument] > type a number in the command to repeat # of times
+
 
 // moving, cursor set
 H > top of the screen
@@ -26,22 +35,18 @@ d > delete
         +] | +} > brackets
 ~ > toggle letter case
 x > deletes selected char
-y > copy
-Y > copy line
+y > Yank (copy)
+Y > Yank (copy) line
 p > paste
 P > paste before
 O > inserts a new line above the current one
 o > inserts a new line below the current one
 r > replaces the current char with a new one
 
-: > console
-:help > documentation
-:Tutor > tutorial
-:q > quit to main
-:q! > quit without saving
-:w > writes to a file
-:wq > writes to the file and quits
-[command][repeat][argument] > type a number in the command to repeat # of times
+// visual mode
+v > char-wise visual mode
+V > line-wise visual mode
+    :s@<string_to_replace>@<replacement_string@ > replaces a string in the selected range
 
 // Other notes:
 

@@ -4,7 +4,12 @@
 
 vim.keymap.set("n", "-", "<cmd>Oil --float<CR>", {desc="[-] open cwd"})
 
--- ~/.config/nvim/lua/config/keymaps.lua
+
+vim.keymap.set("n", "<Leader>h",
+    function() vim.diagnostic.open_float() end,
+    {desc = "[h] open float diagnostic"}
+)
+
 
 local keymap = vim.keymap.set
 
