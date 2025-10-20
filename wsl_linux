@@ -115,8 +115,9 @@ text editing
         sudo apt install ripgrep
         rg '<search_expression>'
 
-
-
+	netcat-openbsd // terminal: allow for network port scan
+		sudo apt install netcat-openbsd
+		nc -zv <ip> <port> -w <timeout>
 
 
 
@@ -126,3 +127,4 @@ WSL-SPECIFIC STUFF
 		Download the nerd font (Caskadya or JetBrains!)
 		Install it using Windows font manager
 		Update the terminal settings for Ubuntu to use this font
+
