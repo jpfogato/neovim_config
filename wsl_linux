@@ -119,7 +119,27 @@ text editing
 		sudo apt install netcat-openbsd
 		nc -zv <ip> <port> -w <timeout>
 
+____________ ssh authentication 
 
+    to make sure you can connect with git via ssh:
+        ssh-keygen -t ed25519 -C "your_email@example.com"
+    
+    generate the ssh.priv key at ~/.ssh/
+    enter the default passphrase
+
+    add the generated key to GitHub (https://github.com/settings/keys)
+
+    edit the ~/.bashrc
+        nvim ~/.bashrc
+
+    add this at the end:
+
+        # Auto-start SSH agent
+            eval "$(ssh-agent -s)"
+            eval "$(ssh-add ~/.ssh/ssh.priv)"
+
+
+------------ bashrc modifications
 
 WSL-SPECIFIC STUFF 
 
