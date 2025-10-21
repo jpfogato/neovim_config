@@ -44,8 +44,11 @@ luac.out
 
 # Rust builds
 /target/
+target
 /debug/
+debug
 /release/
+release
 /get-dependencies
 get-dependencies
 
