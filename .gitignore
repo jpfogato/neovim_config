@@ -31,13 +31,27 @@ luac.out
 *.so.*
 *.dylib
 
-# Executables
+# Binaries, releases or libraries
 *.exe
 *.out
 *.app
 *.i*86
 *.x86_64
 *.hex
+*.dll
+*.so
+*.dylib
 
-# Etc.
-token
+# Rust builds
+/target/
+/debug/
+/release/
+/get-dependencies
+get-dependencies
+
+# Logs and Temporary Files 
+*.log
+*.tmp
+*.swp
+*.swo
+
