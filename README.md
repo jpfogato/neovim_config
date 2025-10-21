@@ -15,12 +15,16 @@ Contained plugins:
 - projects
 - fzf-lua
 - lsp (yanked from kickstart.nvim)
+- Mason
 - dressing
 - rustacean
+- dressing
+- conform
+- blink (requires building from source)
 
 Dependecies:
 
-- rust
+- rust (nightly)
 - rust-analyzer
 - lua
 

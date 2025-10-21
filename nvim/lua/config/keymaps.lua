@@ -64,3 +64,11 @@ keymap("n", "<Leader>cf", function()
 		lsp_format = "fallback",
 	})
 end, { desc = "[c]ode [f]ormat" })
+
+-- exit terminal insert mode with ESC
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+-- or optionally: make Ctrl-hjkl work in terminal like in normal mode
+vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true, silent = true })
+vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true, silent = true })

@@ -1,4 +1,7 @@
 -- blink autocompleting feature
+-- keymaps for this require the autocompletion feature to be active
+-- this means that they can 'shadow' other key bindings.
+-- use <C-..> as default
 
 return {
 	"saghen/blink.cmp",
@@ -27,8 +30,10 @@ return {
 		-- C-k: Toggle signature help (if signature.enabled = true)
 		--
 		-- See :h blink-cmp-config-keymap for defining your own keymap
-		keymap = { preset = "super-tab" },
-
+		keymap = {
+			-- set preset to mimic vscode
+			preset = "super-tab",
+		},
 		appearance = {
 			-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 			-- Adjusts spacing to ensure icons are aligned
