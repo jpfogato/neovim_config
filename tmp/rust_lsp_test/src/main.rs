@@ -3,6 +3,6 @@ fn main() {
     println!("{}", greetings_string);
 }
 
-fn greetings () -> String {
+fn greetings() -> String {
     String::from("Hello, World!")
 }
