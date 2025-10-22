@@ -12,13 +12,16 @@
 -- define which-key groups
 local wk = require("which-key")
 wk.add({
-	{ "<Leader>b", group = "buffer-related keymaps" },
-	{ "<Leader>c", group = "code modification" },
-	{ "<Leader>f", group = "find files" },
-	{ "<Leader>l", group = "lsp commands" },
+	{ "<Leader>b", group = "buffer binds" },
+	{ "<Leader>c", group = "code mod binds" },
+	{ "<Leader>f", group = "find binds" },
+	{ "<Leader>l", group = "lsp binds" },
 	{ "<Leader>m", group = "misc: everything else" },
 	{ "<Leader>fg", group = "find on git" },
 	{ "<Leader>fn", group = "find in Neovim" },
+
+	{ "<Leader>w", group = "window binds" },
+	{ "<Leader>t", group = "terminal binds" },
 })
 
 local keymap = vim.keymap.set
@@ -52,7 +55,7 @@ keymap("n", "<Leader>wl", "<C-w>l", { desc = "[l] Window right", noremap = true 
 
 -- Misc: m prefix
 -- Clear search highlights
-keymap("n", "<Leader>mh", ":nohlsearch<CR>", { desc = "cl search [h]ighlights", noremap = true })
+keymap("n", "<Leader>mh", ":nohlsearch<CR>", { desc = "clr search [h]ighlights", noremap = true })
 
 -- Lazy.nvim
 keymap("n", "<Leader>mL", ":Lazy<CR>", { desc = "[L] Lazy", noremap = true })
@@ -63,12 +66,12 @@ keymap("n", "<Leader>cf", function()
 	require("conform").format({
 		lsp_format = "fallback",
 	})
-end, { desc = "[c]ode [f]ormat" })
+end, { desc = "code [f]ormat" })
 
 -- exit terminal insert mode with ESC
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
--- or optionally: make Ctrl-hjkl work in terminal like in normal mode
-vim.keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true, silent = true })
-vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true, silent = true })
+keymap("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+-- make Ctrl-hjkl work in terminal like in normal mode
+keymap("t", "<C-h>", [[<C-\><C-n><C-w>h]], { noremap = true, silent = true })
+keymap("t", "<C-j>", [[<C-\><C-n><C-w>j]], { noremap = true, silent = true })
+keymap("t", "<C-k>", [[<C-\><C-n><C-w>k]], { noremap = true, silent = true })
+keymap("t", "<C-l>", [[<C-\><C-n><C-w>l]], { noremap = true, silent = true })
