@@ -85,10 +85,6 @@ keymap(
 	{ noremap = true, silent = true, desc = "prev buffer tab" }
 )
 
--- Re-order to previous/next
-keymap("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", opts)
-keymap("n", "<A->>", "<Cmd>BufferMoveNext<CR>", opts)
-
 -- Goto buffer in position...
 keymap("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
 keymap("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
@@ -122,8 +118,8 @@ keymap("n", "<A-c>", "<Cmd>BufferClose<CR>", opts)
 --                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
-keymap("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
-keymap("n", "<C-s-p>", "<Cmd>BufferPickDelete<CR>", opts)
+-- keymap("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
+-- keymap("n", "<C-s-p>", "<Cmd>BufferPickDelete<CR>", opts)
 
 -- Sort automatically by...
 keymap(
@@ -132,7 +128,7 @@ keymap(
 	"<Cmd>BufferOrderByBufferNumber<CR>",
 	{ noremap = true, silent = true, desc = "order [b]y number" }
 )
-keymap("n", "<Space>Tn", "<Cmd>BufferOrderByName<CR>", { noremap = true, silent = true, desc = "order by [n]ame" })
+keymap("n", "<Space>To", "<Cmd>BufferOrderByName<CR>", { noremap = true, silent = true, desc = "[o]rder by name" })
 keymap("n", "<Space>Td", "<Cmd>BufferOrderByDirectory<CR>", { noremap = true, silent = true, desc = "order by [d]ir" })
 keymap(
 	"n",
@@ -147,29 +143,5 @@ keymap(
 	{ desc = "order by [w]indow number", noremap = true, silent = true }
 )
 
--- Safe require (won't error if fzf-lua isn't loaded yet)
-local fzf = require("fzf-lua")
-
--- Custom function to open selected file in a new tab
-local function fzf_open_in_tab()
-	fzf.files({
-		cwd = vim.loop.cwd(), -- current working directory
-		actions = {
-			-- Default <enter> action is "edit"
-			["default"] = function(selected)
-				if not selected or #selected == 0 then
-					return
-				end
-				local file = selected[1]
-				vim.cmd("tabnew " .. vim.fn.fnameescape(file))
-			end,
-		},
-	})
-end
-
--- Keybinding: <leader>Tn → FZF open in new tab
-keymap("n", "<leader>Tn", fzf_open_in_tab, {
-	noremap = true,
-	silent = true,
-	desc = "Search file in cwd and open in new tab",
-})
+keymap("n", "<A->>", "<Cmd>:vertical resize +2<CR>", { noremap = true, silent = true })
+keymap("n", "<A-<>", "<Cmd>:vertical resize -2<CR>", { noremap = true, silent = true })
