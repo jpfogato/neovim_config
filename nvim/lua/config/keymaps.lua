@@ -19,7 +19,6 @@ wk.add({
 	{ "<Leader>m", group = "misc: everything else" },
 	{ "<Leader>fg", group = "find on git" },
 	{ "<Leader>fn", group = "find in Neovim" },
-	{ "<Leader>T", group = "tab binds" },
 	{ "<Leader>w", group = "window binds" },
 	{ "<Leader>t", group = "terminal binds" },
 })
@@ -75,23 +74,29 @@ keymap("t", "<C-j>", [[<C-\><C-n><C-w>j]], opts)
 keymap("t", "<C-k>", [[<C-\><C-n><C-w>k]], opts)
 keymap("t", "<C-l>", [[<C-\><C-n><C-w>l]], opts)
 
--- barbar binds
--- Move to previous/next
-keymap("n", "<Leader><Tab>", "<Cmd>bnext<CR>", { noremap = true, silent = true, desc = "next buffer tab" })
-keymap("n", "<Leader><Backspace>", "<Cmd>bprevious<CR>", { noremap = true, silent = true, desc = "prev buffer tab" })
+-- buffer next/previous
+keymap("n", "<Tab>", "<Cmd>bnext<CR>", { noremap = true, silent = true, desc = "next buffer tab" })
+keymap("n", "<S-Tab>", "<Cmd>bprevious<CR>", { noremap = true, silent = true, desc = "prev buffer tab" })
 
--- Goto buffer in position...
-keymap("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", opts)
-keymap("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", opts)
-keymap("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", opts)
-keymap("n", "<A-4>", "<Cmd>BufferGoto 4<CR>", opts)
-keymap("n", "<A-5>", "<Cmd>BufferGoto 5<CR>", opts)
-keymap("n", "<A-6>", "<Cmd>BufferGoto 6<CR>", opts)
-keymap("n", "<A-7>", "<Cmd>BufferGoto 7<CR>", opts)
-keymap("n", "<A-8>", "<Cmd>BufferGoto 8<CR>", opts)
-keymap("n", "<A-9>", "<Cmd>BufferGoto 9<CR>", opts)
-keymap("n", "<A-0>", "<Cmd>BufferLast<CR>", opts)
+-- normal mode
+-- moevement
+-- h and l behaves like b and w instead of moving char-wise
+keymap("n", "h", "b", opts)
+keymap("n", "l", "w", opts)
+-- but if you press Shift, it should behave normaly
+keymap("n", "<S-h>", "h", opts)
+keymap("n", "<S-l>", "l", opts)
 
 -- window resizing
-keymap("n", "<A->>", "<Cmd>:vertical resize +2<CR>", { noremap = true, silent = true })
-keymap("n", "<A-<>", "<Cmd>:vertical resize -2<CR>", { noremap = true, silent = true })
+keymap("n", "<C-Up>", "<Cmd>:resize +2<CR>", opts)
+keymap("n", "<C-Down>", "<Cmd>:resize -2<CR>", opts)
+keymap("n", "<C-Right>", "<Cmd>:vertical resize +2<CR>", opts)
+keymap("n", "<C-Left>", "<Cmd>:vertical resize -2<CR>", opts)
+
+-- text editing in Visual Mode:
+-- Moving code around (like Alt + Up/Down on vscode)
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+-- indenting
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
