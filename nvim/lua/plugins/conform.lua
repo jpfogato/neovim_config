@@ -8,6 +8,7 @@ return {
 			lua = { "stylua" },
 			rust = { "rustfmt" },
 			json = { "prettier" },
+			python = { "autopep8" },
 		},
 		-- configure autoformat when file save
 		format_on_save = {

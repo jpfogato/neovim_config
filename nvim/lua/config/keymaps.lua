@@ -56,6 +56,8 @@ keymap("n", "<Leader>mh", ":nohlsearch<CR>", { desc = "clr search [h]ighlights",
 
 -- Lazy.nvim
 keymap("n", "<Leader>mL", ":Lazy<CR>", { desc = "[L] Lazy", noremap = true })
+-- Mason
+keymap("n", "<Leader>mM", ":Mason<CR>", { desc = "[M]ason", noremap = true })
 
 -- Code changes, formattings, etc.; c prefix
 -- code formatter (conform)
