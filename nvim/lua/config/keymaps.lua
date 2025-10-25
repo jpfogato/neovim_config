@@ -84,12 +84,12 @@ keymap("n", "<S-Tab>", "<Cmd>bprevious<CR>", { noremap = true, silent = true, de
 keymap("n", "h", "b", opts)
 keymap("n", "l", "w", opts)
 -- but if you press Shift, it should behave normaly
-keymap("n", "<S-h>", "h", opts)
-keymap("n", "<S-l>", "l", opts)
+keymap("n", "H", "h", opts)
+keymap("n", "L", "l", opts)
 
 -- window resizing
-keymap("n", "<C-Up>", "<Cmd>:resize +2<CR>", opts)
-keymap("n", "<C-Down>", "<Cmd>:resize -2<CR>", opts)
+keymap("n", "<C-Up>", "<Cmd>:resize -2<CR>", opts)
+keymap("n", "<C-Down>", "<Cmd>:resize +2<CR>", opts)
 keymap("n", "<C-Right>", "<Cmd>:vertical resize +2<CR>", opts)
 keymap("n", "<C-Left>", "<Cmd>:vertical resize -2<CR>", opts)
 
