@@ -89,5 +89,6 @@ sudo apt install nodejs -y
 required for autopep8 python support
 
 ```bash
+sudo apt install python3-pip -y
 sudo apt install python3.12-venv
 ```
