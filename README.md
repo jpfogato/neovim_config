@@ -3,9 +3,14 @@
 This repository holds my Neovim plugins and their settings. 
 The goal for the future is also to provide a shell script to install all dependencies so the repo can spin up automatically after clonning and running the installation script.
 
-Clone it or download as a .zip and extract at ~ by `unzip .\neovim_config.zip ~`
+Clone it and add it to the `~/.config` directory
 
-Contained plugins:
+```bash
+git clone https://github.com/jpfogato/neovim_config.git
+sudo mv neovim_config/ .config
+```
+
+## Contained plugins:
 
 - sleuth
 - wich-key
@@ -25,6 +30,27 @@ Contained plugins:
 - blink (requires building from source)
 
 # Dependecies Installation:
+
+## Environment
+Will install the building tools for building neovim from source to ensure we get the latest one available for plugin support
+
+```bash
+sudo apt update
+sudo apt install build-essential cmake gettext libtool libtool-bin autoconf automake pkg-config unzip git
+```
+**Recomended:** Ensure no remaining Neovim installation is in the system by `sudo apt purge --autoremove neovim`
+Download and install Neovim
+```bash
+git clone https://github.com/neovim/neovim.git
+cd neovim
+git checkout stable
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+exec bash
+nvim --version
+cd ..
+rm -rf neovim
+```
 
 ## Rust
 Required by lsp and blink.
