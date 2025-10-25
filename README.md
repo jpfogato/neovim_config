@@ -39,7 +39,9 @@ sudo apt update
 sudo apt install build-essential cmake gettext libtool libtool-bin autoconf automake pkg-config unzip git
 ```
 **Recomended:** Ensure no remaining Neovim installation is in the system by `sudo apt purge --autoremove neovim`
+
 Download and install Neovim
+
 ```bash
 git clone https://github.com/neovim/neovim.git
 cd neovim
@@ -53,7 +55,7 @@ rm -rf neovim
 ```
 
 ## Rust
-Required by lsp and blink.
+Required by lsp and blink and lsp support for Rust.
 Run the commands below to have the nigtly builds set as default toolchain for Rust
 
 ```bash
@@ -64,6 +66,7 @@ rustup toolchain install nightly
 cd ~
 rustup override set nightly
 rustup show
+rustup component add rust-analyzer
 ```
 
 this should download and install rust, restart the shell and ensure it is in $PATH, then install the nightly builds, and then set it as default rust toolchian
@@ -73,3 +76,12 @@ Required as it is the language selected for lazy.nvim plugin manager
 ```bash
 sudo apt install lua5.x (change x for latest one available)
 ```
+
+## Node.js
+required by prettier and bash-language-server support
+
+```bash
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt install nodejs -y
+```
+
