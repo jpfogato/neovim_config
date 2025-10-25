@@ -85,3 +85,9 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install nodejs -y
 ```
 
+## Python
+required for autopep8 python support
+
+```bash
+sudo apt install python3.12-venv
+```
