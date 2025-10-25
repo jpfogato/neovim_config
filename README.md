@@ -29,9 +29,11 @@ sudo mv neovim_config/ .config
 - conform
 - blink (requires building from source)
 
-# Dependecies Installation:
+# Installation:
 
-## Environment
+## Dependencies
+
+### Environment
 Will install the building tools for building neovim from source to ensure we get the latest one available for plugin support
 
 ```bash
@@ -54,7 +56,7 @@ cd ..
 rm -rf neovim
 ```
 
-## Rust
+### Rust
 Required by lsp and blink and lsp support for Rust.
 Run the commands below to have the nigtly builds set as default toolchain for Rust
 
@@ -71,13 +73,13 @@ rustup component add rust-analyzer
 
 this should download and install rust, restart the shell and ensure it is in $PATH, then install the nightly builds, and then set it as default rust toolchian
 
-## Lua
+### Lua
 Required as it is the language selected for lazy.nvim plugin manager
 ```bash
 sudo apt install lua5.x (change x for latest one available)
 ```
 
-## Node.js
+### Node.js
 required by prettier and bash-language-server support
 
 ```bash
@@ -85,10 +87,19 @@ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt install nodejs -y
 ```
 
-## Python
+### Python
 required for autopep8 python support
 
 ```bash
 sudo apt install python3-pip -y
 sudo apt install python3.12-venv
+```
+
+## Post-install 
+After installing everything, we will need to compile blink from source as it is failing to do so on install.
+Run neovim for the firt time, then close it after all plugins are installed.
+
+```bash
+cd ~/.local/share/nvim/lazy/blink.cmp
+cargo +nightly build --release
 ```
