@@ -110,7 +110,7 @@ alias fd='fdfind'
 alias v='fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs -r nvim'
 alias lsym='ls -lhaF | grep ^l'
 # tree alias to browse through git repos faster
-alias tmg='tree --gitignore -aL 3 -I .git .vscode'
+alias tmg='tree --gitignore -aL 3 -I .git'
 
 
 # enable color support of ls and also add handy aliases
@@ -139,3 +139,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 source ~/.cargo/env
+
+# To customize prompt, run `p10k configure` or edit ~/.config/dotfiles/config_files/zsh/.p10k.zsh.
+[[ ! -f ~/.config/dotfiles/config_files/zsh/.p10k.zsh ]] || source ~/.config/dotfiles/config_files/zsh/.p10k.zsh
